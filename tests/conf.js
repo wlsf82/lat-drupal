@@ -13,6 +13,13 @@ exports.config = {
 
   baseUrl: 'http://lat-drupal.local/',
 
+  params: {
+    adminLogin: {
+      'user': 'admin',
+      'password': 'latdrupal'
+    }
+  },
+
   capabilities: {
 
     'browserName': 'chrome',
