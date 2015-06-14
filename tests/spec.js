@@ -26,4 +26,17 @@ describe ('home page' , function () {
 		expect(element(by.css('body.logged-in')).isPresent()).toBe(false);
 	});
 
+	it ('should a have a main menu', function () {
+		browser.get('/');
+		expect(home.mainMenu.isPresent()).toBe(true);
+	});
+
+	it ('should have home, media and contact menu items', function () {
+		var items = ['Home', 'Media', 'Contact'];
+		browser.get('/');
+		items.forEach(function (item) {
+			expect(home.mainMenu.getText()).toContain(item);
+		})
+	});
+
 });
