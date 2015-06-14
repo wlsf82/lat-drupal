@@ -12,7 +12,7 @@ describe ('home page' , function () {
 	var home = new HomePage();
 	
 	it ('should have a welcome message', function () {
-		browser.get('/');
+		home.get();
 		expect(home.getWelcome()).toEqual('Welcome to lat-drupal.local');
 	});
 
@@ -27,13 +27,13 @@ describe ('home page' , function () {
 	});
 
 	it ('should a have a main menu', function () {
-		browser.get('/');
+		home.get();
 		expect(home.mainMenu.isPresent()).toBe(true);
 	});
 
 	it ('should have home, media and contact menu items', function () {
 		var items = ['Home', 'Media', 'Contact'];
-		browser.get('/');
+		home.get();
 		items.forEach(function (item) {
 			expect(home.mainMenu.getText()).toContain(item);
 		})
