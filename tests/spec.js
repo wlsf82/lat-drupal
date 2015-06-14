@@ -36,7 +36,7 @@ describe ('home page' , function () {
 		home.get();
 		items.forEach(function (item) {
 			expect(home.mainMenu.getText()).toContain(item);
-		})
+		});
 	});
 
 });
