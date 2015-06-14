@@ -25,7 +25,7 @@ function logout() {
   element(by.cssContainingText('#toolbar-user .last a', 'Log out')).click();
 }
 
-// Exposed helper methods.
+// Expose helper methods.
 module.exports = {
   login: login,
   logout: logout
