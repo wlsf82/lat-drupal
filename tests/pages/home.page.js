@@ -10,6 +10,13 @@ var HomePage = function () {
   	return element(by.css('h1#page-title')).getText();
   };
 
+  this.get = function () {
+  	browser.get('/');
+  }
+
 };
 
 module.exports = HomePage;
+
+// To experimento
+// module.exports = new HomePage();
