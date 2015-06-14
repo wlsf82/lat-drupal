@@ -1,3 +1,7 @@
+/**
+ * @file helper.js
+ */
+
 var adminlogin = browser.params.adminLogin;
 
 function login () {

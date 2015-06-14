@@ -18,5 +18,5 @@ var HomePage = function () {
 
 module.exports = HomePage;
 
-// To experimento
+// To experiment:
 // module.exports = new HomePage();
