@@ -6,13 +6,13 @@ var HomePage = function () {
 
 	this.mainMenu = element(by.css('#main-menu-links'));
 
+  this.get = function () {
+  	browser.get('/');
+  };
+
   this.getWelcome = function () {
   	return element(by.css('h1#page-title')).getText();
   };
-
-  this.get = function () {
-  	browser.get('/');
-  }
 
 };
 
