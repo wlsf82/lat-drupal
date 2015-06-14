@@ -16,7 +16,4 @@ var HomePage = function () {
 
 };
 
-module.exports = HomePage;
-
-// To experiment:
-// module.exports = new HomePage();
+module.exports = new HomePage();

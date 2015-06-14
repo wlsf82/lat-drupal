@@ -8,12 +8,10 @@ var HomePage = require('./pages/home.page')
 browser.ignoreSynchronization = true;
 
 describe ('home page' , function () {
-
-	var home = new HomePage();
 	
 	it ('should have a welcome message', function () {
-		home.get();
-		expect(home.getWelcome()).toEqual('Welcome to lat-drupal.local');
+		HomePage.get();
+		expect(HomePage.getWelcome()).toEqual('Welcome to lat-drupal.local');
 	});
 
 	it ('should login as admin', function () {
@@ -27,15 +25,15 @@ describe ('home page' , function () {
 	});
 
 	it ('should a have a main menu', function () {
-		home.get();
-		expect(home.mainMenu.isPresent()).toBe(true);
+		HomePage.get();
+		expect(HomePage.mainMenu.isPresent()).toBe(true);
 	});
 
 	it ('should have home, media and contact menu items', function () {
 		var items = ['Home', 'Media', 'Contact'];
-		home.get();
+		HomePage.get();
 		items.forEach(function (item) {
-			expect(home.mainMenu.getText()).toContain(item);
+			expect(HomePage.mainMenu.getText()).toContain(item);
 		});
 	});
 
