@@ -2,26 +2,20 @@
  * @file spec.js
  */
 
-var HomePage = require('./pages/home.page')
-	, helper = require('./helpers/helper');
+var HomePage = require('./pages/home.page');
 
 browser.ignoreSynchronization = true;
 
 describe ('home page' , function () {
 	
-	it ('should have a welcome message', function () {
+	it ('should have a title', function () {
 		HomePage.get();
-		expect(HomePage.getWelcome()).toEqual('Welcome to lat-drupal.local');
+		expect(HomePage.getContentTitle()).toEqual('Learning About Testing');
 	});
 
-	it ('should login as admin', function () {
-		helper.login();
-		expect(element(by.css('body.logged-in')).isPresent()).toBe(true);
-	});
-
-	it ('should logout', function () {
-		helper.logout();
-		expect(element(by.css('body.logged-in')).isPresent()).toBe(false);
+	it ('should have a home page content', function () {
+		HomePage.get();
+		expect(HomePage.contentContainer.isPresent()).toBe(true);
 	});
 
 	it ('should a have a main menu', function () {
