@@ -9,7 +9,10 @@ exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
   // seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
 
-  specs: [ 'spec.js' ],
+  specs: [ 
+    'spec.js',
+    'authentication.spec.js' 
+  ],
 
   baseUrl: 'http://lat-drupal.local/',
 
