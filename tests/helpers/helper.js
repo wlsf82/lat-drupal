@@ -25,8 +25,18 @@ function logout() {
   element(by.cssContainingText('#toolbar-user .last a', 'Log out')).click();
 }
 
+function clickMenu(menu) {
+  element(by.cssContainingText('#main-menu-links a', menu)).click();
+}
+
+function getMenuSubItems () {
+  return element(by.css('sub-items'));
+}
+
 // Expose helper methods.
 module.exports = {
   login: login,
-  logout: logout
+  logout: logout,
+  clickMenu: clickMenu,
+  getMenuSubItems: getMenuSubItems
 };
