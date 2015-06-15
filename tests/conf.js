@@ -11,6 +11,7 @@ exports.config = {
 
   specs: [ 
     'spec.js',
+    'media.spec.js',
     'authentication.spec.js' 
   ],
 
