@@ -4,6 +4,8 @@
 
 // var cloudTestingHelper = require('./helpers/cloud.testing.helper');
 
+var HtmlReporter = require('protractor-html-screenshot-reporter');
+
 exports.config = {
 
   seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -38,15 +40,22 @@ exports.config = {
   },
 
   onPrepare: function() {
-    var SpecReporter = require('jasmine-spec-reporter');
-
-    // add jasmine spec reporter
-    jasmine.getEnv().addReporter(new SpecReporter({
-      displayFailuresSummary: true, // display summary of all failures after execution
-      displayFailedSpec: true,      // display each failed spec
-      displaySuiteNumber: true,     // display each suite number (hierarchical)
-      displaySpecDuration: true     // display each spec duration
+    // Add a screenshot reporter and store screenshots to `/tmp/screnshots`: 
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: 'tmp'
     }));
-  },
+  }
+
+  // onPrepare: function() {
+  //   var SpecReporter = require('jasmine-spec-reporter');
+
+  //   // add jasmine spec reporter
+  //   jasmine.getEnv().addReporter(new SpecReporter({
+  //     displayFailuresSummary: true, // display summary of all failures after execution
+  //     displayFailedSpec: true,      // display each failed spec
+  //     displaySuiteNumber: true,     // display each suite number (hierarchical)
+  //     displaySpecDuration: true     // display each spec duration
+  //   }));
+  // },
 
 }
