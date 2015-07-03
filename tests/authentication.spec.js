@@ -9,7 +9,7 @@ browser.ignoreSynchronization = true;
 describe ('authentication' , function () {
 	
 	it ('should login as admin', function () {
-		helper.login();
+		helper.login('admin', 'latdrupal');
 		expect(element(by.css('body.logged-in')).isPresent()).toBe(true);
 	});
 
