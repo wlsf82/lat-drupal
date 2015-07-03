@@ -11,10 +11,6 @@ var HomePage = function () {
   	browser.get('/');
   };
 
-  this.getContentTitle = function () {
-  	return element(by.css('#content h2 a')).getText();
-  };
-
 };
 
 module.exports = new HomePage();
