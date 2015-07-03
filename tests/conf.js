@@ -13,18 +13,12 @@ exports.config = {
 
   specs: [ 
     'spec.js',
-    'media.spec.js',
+    'news.spec.js',
+    // 'media.spec.js',
     'authentication.spec.js' 
   ],
 
   baseUrl: 'http://lat-drupal.local/',
-
-  params: {
-    adminLogin: {
-      'user': 'admin',
-      'password': 'latdrupal'
-    }
-  },
 
   capabilities: {
 
@@ -40,22 +34,10 @@ exports.config = {
   },
 
   onPrepare: function() {
-    // Add a screenshot reporter and store screenshots to `/tmp/screnshots`: 
+    // Add a screenshot reporter and store screenshots to `/tmp`: 
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'tmp'
     }));
   }
-
-  // onPrepare: function() {
-  //   var SpecReporter = require('jasmine-spec-reporter');
-
-  //   // add jasmine spec reporter
-  //   jasmine.getEnv().addReporter(new SpecReporter({
-  //     displayFailuresSummary: true, // display summary of all failures after execution
-  //     displayFailedSpec: true,      // display each failed spec
-  //     displaySuiteNumber: true,     // display each suite number (hierarchical)
-  //     displaySpecDuration: true     // display each spec duration
-  //   }));
-  // },
 
 }
