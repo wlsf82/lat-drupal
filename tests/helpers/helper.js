@@ -2,23 +2,16 @@
  * @file helper.js
  */
 
-var adminlogin = browser.params.adminLogin;
+function login (user, password) {
+	var usernameField = element(by.css('#user-login #edit-name'))
+    , passwordField = element(by.css('#user-login #edit-pass'))
+    , submitButton = element(by.css('#user-login #edit-submit'));
 
-function login () {
-	var user = adminlogin.user
-		, password = adminlogin.password;
+  browser.get('/?q=user');    
 
-	browser.get('/');
-
-	var usernameField = element(by.css('#edit-name'))
-    , passwordField = element(by.css('#edit-pass'))
-    , submitButton = element(by.css('#edit-submit'));
-
-  usernameField.sendKeys(user).then(function() {
-    passwordField.sendKeys(password).then(function() {
-      submitButton.click();
-    });
-  });
+  usernameField.sendKeys(user);
+  passwordField.sendKeys(password);
+  submitButton.click();
 }
 
 function logout() {
@@ -29,14 +22,9 @@ function clickMenu(menu) {
   element(by.cssContainingText('#main-menu-links a', menu)).click();
 }
 
-function getMenuSubItems () {
-  return element(by.css('sub-items'));
-}
-
 // Expose helper methods.
 module.exports = {
   login: login,
   logout: logout,
-  clickMenu: clickMenu,
-  getMenuSubItems: getMenuSubItems
+  clickMenu: clickMenu
 };
