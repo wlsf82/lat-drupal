@@ -11,7 +11,7 @@ describe ('home page' , function () {
 	
 	it ('should have a title', function () {
 		HomePage.get();
-		expect(genericPage.getContentTitle()).toEqual('Learning About Testing');
+		expect(HomePage.getTitle()).toEqual('Learning About Testing');
 	});
 
 	it ('should have a home page content', function () {
