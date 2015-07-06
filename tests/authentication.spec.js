@@ -10,12 +10,12 @@ describe ('authentication' , function () {
 	
 	it ('should login as admin', function () {
 		helper.login('admin', 'latdrupal');
-		expect(element(by.css('body.logged-in')).isPresent()).toBe(true);
+		expect(element(by.cssContainingText('a', 'Log out')).isPresent()).toBe(true);
 	});
 
 	it ('should logout', function () {
 		helper.logout();
-		expect(element(by.css('body.logged-in')).isPresent()).toBe(false);
+		expect(element(by.cssContainingText('a', 'Log out')).isPresent()).toBe(false);
 	});
 
 });
