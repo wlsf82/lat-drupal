@@ -8,6 +8,11 @@ var HomePage = require('./pages/home.page')
 browser.ignoreSynchronization = true;
 
 describe ('home page' , function () {
+
+	it ('should use andromeda theme', function () {
+		browser.get('/');
+		expect(browser.executeScript('return Drupal.settings.ajaxPageState.theme')).toEqual('andromeda');
+	});
 	
 	it ('should have a title', function () {
 		HomePage.get();
