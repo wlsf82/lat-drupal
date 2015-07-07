@@ -24,4 +24,9 @@ describe ('Media' , function () {
 		expect(MediaPage.pagination.isDisplayed()).toBe(true);
 	});
 
+	it ('should navigate to the last page using pagination', function () {
+		MediaPage.get();
+		MediaPage.goToLastPage();
+		expect(MediaPage.firstPageLink.isDisplayed()).toBe(true);
+	});
 });
