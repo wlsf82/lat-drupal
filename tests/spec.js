@@ -34,8 +34,8 @@ describe ('home page' , function () {
 		expect(HomePage.mainMenu.isPresent()).toBe(true);
 	});
 
-	it ('should have home, news, medias, blog, contact and login menu items', function () {
-		var items = ['Home', 'Novidades', 'Midias', 'Blog', 'Contato', 'Login'];
+	it ('should have news, medias, blog, contact and login menu items', function () {
+		var items = ['Novidades', 'Midias', 'Blog', 'Contato', 'Login'];
 		HomePage.get();
 		items.forEach(function (item) {
 			expect(HomePage.mainMenu.getText()).toContain(item);
