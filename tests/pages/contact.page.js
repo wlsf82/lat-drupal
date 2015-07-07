@@ -15,13 +15,18 @@ var ContactPage = function () {
   };
 
   this.fillForm = function (name, email, message) {
+    browser.driver.sleep(100);
     this.name.sendKeys(name);
+    browser.driver.sleep(100);
     this.email.sendKeys(email);
+    browser.driver.sleep(100);
     this.message.sendKeys(message);
+    browser.driver.sleep(100);
   };
 
   this.submit = function (name, email, message) {
     this.fillForm(name, email, message);
+    browser.driver.sleep(100);
     this.submitButton.click();
   };
 
