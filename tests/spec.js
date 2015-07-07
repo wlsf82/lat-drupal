@@ -37,4 +37,9 @@ describe ('home page' , function () {
 		});
 	});
 
+	it ('should have an external link for the talking about testing blog', function () {
+		HomePage.get();
+		expect(genericPage.getBlogUrl()).toEqual('http://talkingabouttesting.com/');
+	});
+
 });
