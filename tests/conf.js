@@ -14,7 +14,7 @@ exports.config = {
   specs: [ 
     'spec.js',
     'news.spec.js',
-    // 'media.spec.js',
+    'media.spec.js',
     'authentication.spec.js' 
   ],
 
