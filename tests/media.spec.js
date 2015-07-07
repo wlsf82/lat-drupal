@@ -19,4 +19,9 @@ describe ('Media' , function () {
 		expect(MediaPage.viewList.isPresent()).toBe(true);
 	});
 
+	it ('should display pagination for each 10 list items', function () {
+		MediaPage.get();
+		expect(MediaPage.pagination.isDisplayed()).toBe(true);
+	});
+
 });
