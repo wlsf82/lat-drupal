@@ -9,7 +9,7 @@ var GenericPage = function () {
   };
 
   this.getBlogUrl = function () {
-  	return element(by.css('#main-menu-links li:nth-child(4) a')).getAttribute('href');
+  	return element(by.css('#main-menu-links li:nth-child(3) a')).getAttribute('href');
   };
 
 };
