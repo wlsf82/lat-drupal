@@ -18,7 +18,7 @@ describe ('News', function () {
 		expect(NewsPage.viewList.isPresent()).toBe(true);
 	});
 
-	iit ('should not have pagination for less than 10 list items', function () {
+	it ('should not have pagination for less than 10 list items', function () {
 		NewsPage.get();
 		expect(NewsPage.pagination.isPresent()).toBe(false);
 	});
