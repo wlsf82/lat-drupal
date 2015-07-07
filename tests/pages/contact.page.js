@@ -20,8 +20,8 @@ var ContactPage = function () {
     this.message.sendKeys(message);
   };
 
-  this.successfullySubmit = function () {
-    this.fillForm('Ana', 'ana@banana.com', 'teste lorem ipsum');
+  this.submit = function (name, email, message) {
+    this.fillForm(name, email, message);
     this.submitButton.click();
   };
 
