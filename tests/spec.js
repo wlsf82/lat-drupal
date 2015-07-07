@@ -19,6 +19,11 @@ describe ('home page' , function () {
 		expect(HomePage.getTitle()).toEqual('Learning About Testing');
 	});
 
+	it ('should have a site slogan', function () {
+		HomePage.get();
+		expect(HomePage.slogan.getText()).toEqual('Aprenda teste de software com conteudo mao na massa!');
+	});
+
 	it ('should have a home page content', function () {
 		HomePage.get();
 		expect(HomePage.contentContainer.isPresent()).toBe(true);
