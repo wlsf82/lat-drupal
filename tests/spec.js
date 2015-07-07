@@ -7,7 +7,7 @@ var HomePage = require('./pages/home.page')
 
 browser.ignoreSynchronization = true;
 
-describe ('home page' , function () {
+describe ('Home page' , function () {
 
 	it ('should use andromeda theme', function () {
 		browser.get('/');
