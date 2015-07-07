@@ -8,18 +8,19 @@ var NewsPage = require('./pages/news.page')
 browser.ignoreSynchronization = true;
 
 describe ('News', function () {
+	beforeEach(function () {
+    NewsPage.get();
+  });
+
 	it ('should have a title', function () {
-		NewsPage.get();
 		expect(genericPage.getContentTitle()).toEqual('Novidades');
 	});
 
 	it ('should have a list of news', function () {
-		NewsPage.get();
 		expect(NewsPage.viewList.isPresent()).toBe(true);
 	});
 
 	it ('should not have pagination for less than 10 list items', function () {
-		NewsPage.get();
 		expect(NewsPage.pagination.isPresent()).toBe(false);
 	});
 });
