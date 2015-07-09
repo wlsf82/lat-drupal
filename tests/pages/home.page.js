@@ -17,6 +17,10 @@ var HomePage = function () {
   	return this.title.getText();
   };
 
+  this.checkDrupalTheme = function (theme) {
+    expect(browser.executeScript('return Drupal.settings.ajaxPageState.theme')).toEqual(theme);
+  };
+
 };
 
 module.exports = new HomePage();
