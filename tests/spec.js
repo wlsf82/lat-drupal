@@ -14,7 +14,7 @@ describe ('Home page' , function () {
   });
 
 	it ('should use andromeda theme', function () {
-		expect(browser.executeScript('return Drupal.settings.ajaxPageState.theme')).toEqual('andromeda');
+		HomePage.checkDrupalTheme('andromeda');
 	});
 	
 	it ('should have a title', function () {
