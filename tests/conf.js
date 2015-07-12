@@ -39,6 +39,8 @@ exports.config = {
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'tmp'
     }));
+
+    browser.driver.manage().window().maximize();
   }
 
 }
