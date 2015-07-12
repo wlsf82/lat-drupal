@@ -8,7 +8,7 @@ var ContactPage = function () {
   this.email = element(by.css('.webform-client-form #edit-submitted-email'));
   this.message = element(by.css('.webform-client-form textarea'));
   this.submitButton = element(by.css('.webform-client-form input[value="Submit"'));
-  this.successMessage = element(by.cssContainingText('.webform-confirmation p', 'Thank you, your submission has been received.'))
+  this.successMessage = element(by.cssContainingText('.webform-confirmation p', 'Thank you, your submission has been received.'));
 
   this.get = function () {
   	browser.get('/?q=node/3');
