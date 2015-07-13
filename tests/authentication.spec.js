@@ -2,20 +2,20 @@
  * @file authentication.spec.js
  */
 
-var helper = require('./helpers/helper');
+var AuthenticationPage = require('./pages/authentication.page');
 
 browser.ignoreSynchronization = true;
 
-describe ('authentication' , function () {
+describe ('Authentication' , function () {
 	
 	it ('should login as admin', function () {
-		helper.login('admin', 'latdrupal');
-		expect(element(by.cssContainingText('a', 'Log out')).isPresent()).toBe(true);
+		AuthenticationPage.login('admin', 'latdrupal');
+		expect(AuthenticationPage.logoutLink.isPresent()).toBe(true);
 	});
 
 	it ('should logout', function () {
-		helper.logout();
-		expect(element(by.cssContainingText('a', 'Log out')).isPresent()).toBe(false);
+		AuthenticationPage.logout();
+		expect(AuthenticationPage.logoutLink.isPresent()).toBe(false);
 	});
 
 });
