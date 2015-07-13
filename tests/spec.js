@@ -44,10 +44,9 @@ describe ('Home page' , function () {
 		expect(genericPage.getBlogUrl()).toEqual('http://talkingabouttesting.com/');
 	});
 
-	// @TODO: Need refactoring to be more readable, but it's passing.
 	it ('should verify that the user is able to navigate through the site using the TAB key', function () {
-		element(by.css('body')).sendKeys(protractor.Key.TAB);
-		expect(element(by.cssContainingText('a', 'Skip to main content')).isDisplayed()).toBe(true);
+		genericPage.body.sendKeys(protractor.Key.TAB);
+		expect(genericPage.accessibilityElement.isDisplayed()).toBe(true);
 	})
 
 });
